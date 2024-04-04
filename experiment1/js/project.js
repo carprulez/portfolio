@@ -1,6 +1,6 @@
-// project.js - purpose and description here
-// Author: Your Name
-// Date:
+// project.js - Fantasy Trail Name Generator
+// Author: Carter Gruebel
+// Date: 4/4/24
 
 // NOTE: This is how we might start a basic JavaaScript OOP project
 
@@ -23,12 +23,45 @@ class MyProjectClass {
 }
 
 function main() {
-  // create an instance of the class
-  let myInstance = new MyProjectClass("value1", "value2");
-
-  // call a method on the instance
-  myInstance.myMethod();
+  const fillers = {
+    adjective: ["gloomy", "daunting", "peaceful", "beautiful", "dull", "drab", "charming", "popular"],
+    first: ["Hell's", "Trail of", "Angel's", "Terraced", "Smiling", "Destiny's", "Giant's", "Winding",],
+    second: ["Steps", "Path", "Climb", "Road", "Walk", "Avenue", "Drag", "Stroll", "Byway", "Plateau"],
+    warning: ["careful", "cautious", "afraid", "scared", "frightened", "warned", "excited", "happy", "nervous"]
+  };
+  
+  const template = `You approach the $adjective view of the $first $second trail, be $warning!`;
+  
+  
+  // STUDENTS: You don't need to edit code below this line.
+  
+  const slotPattern = /\$(\w+)/;
+  
+  function replacer(match, name) {
+    let options = fillers[name];
+    if (options) {
+      return options[Math.floor(Math.random() * options.length)];
+    } else {
+      return `<UNKNOWN:${name}>`;
+    }
+  }
+  
+  function generate() {
+    let story = template;
+    while (story.match(slotPattern)) {
+      story = story.replace(slotPattern, replacer);
+    }
+  
+    /* global box */
+    $("#box").text(story);
+  }
+  
+  /* global clicker */
+  $("#clicker").click(generate);
+  
+  generate();
+  
 }
 
 // let's get this party started - uncomment me
-//main();
+main();

@@ -1,4 +1,4 @@
-// sketch.js - purpose and description here
+// sketch.js - This is the algorithm for generating 
 // Author: Your Name
 // Date:
 
@@ -36,14 +36,13 @@ function resizeScreen() {
 
 // setup() function is called once when the program starts
 function setup() {
-  // place our canvas, making it fit our container
-  canvasContainer = $("#canvas-container");
-  let canvas = createCanvas(canvasContainer.width(), canvasContainer.height());
-  canvas.parent("canvas-container");
-  // resize canvas is the page is resized
+  createCanvas(800, 600);
+  // Calculate the endpoints of the line
+  lineStartX = 0;
+  lineEndX = width;
+  lineStartY = height * (2 / 3); // Bottom third of the screen
+  lineEndY = height * (2 / 3);
 
-  // create an instance of the class
-  myInstance = new MyClass("VALUE1", "VALUE2");
 
   $(window).resize(function() {
     resizeScreen();
@@ -53,27 +52,10 @@ function setup() {
 
 // draw() function is called repeatedly, it's the main animation loop
 function draw() {
-  background(220);    
-  // call a method on the instance
-  myInstance.myMethod();
+  background(0); // Black background
 
-  // Set up rotation for the rectangle
-  push(); // Save the current drawing context
-  translate(centerHorz, centerVert); // Move the origin to the rectangle's center
-  rotate(frameCount / 100.0); // Rotate by frameCount to animate the rotation
-  fill(234, 31, 81);
-  noStroke();
-  rect(-125, -125, 250, 250); // Draw the rectangle centered on the new origin
-  pop(); // Restore the original drawing context
-
-  // The text is not affected by the translate and rotate
-  fill(255);
-  textStyle(BOLD);
-  textSize(140);
-  text("p5*", centerHorz - 105, centerVert + 40);
-}
-
-// mousePressed() function is called once after every time a mouse button is pressed
-function mousePressed() {
-    // code to run when mouse is pressed
+  // Draw the line
+  stroke(255); // White stroke color
+  strokeWeight(3); // Thickness of the line
+  line(lineStartX, lineStartY, lineEndX, lineEndY);
 }

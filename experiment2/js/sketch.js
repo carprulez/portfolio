@@ -1,17 +1,11 @@
 // sketch.js - This is the sketch for a procedurally generated coral reef.
 // Author: Carter Gruebel
-// Date: 4/14/2024
-
-// Constants - User-servicable parts
-// In a longer project I like to put these in a separate file
+// Date: 4/15/2024
 
 // Globals
+let myInstance;
 let canvasContainer;
-let centerHorz, centerVert;
-
-let noiseValues = []; // Array to store precomputed noise values
-let noiseScale = 0.03; // Scale for the noise function
-
+var centerHorz, centerVert;
 let horizontalNoiseValues = [];
 let seed = 239;
 let lastSpawnTime = 0;
@@ -30,29 +24,27 @@ function resizeScreen() {
   // redrawCanvas(); // Redraw everything based on new size
 }
 
-// setup() function is called once when the program starts
 function setup() {
   // place our canvas, making it fit our container
   canvasContainer = $("#canvas-container");
   let canvas = createCanvas(canvasContainer.width(), canvasContainer.height());
   canvas.parent("canvas-container");
   // resize canvas is the page is resized
-  generateNoiseValues();
-
-  $(window).resize(function() {
-    resizeScreen();
-  });
-  resizeScreen();
-
-  createCanvas(800, 600);
-  createButton("reimagine").mousePressed(() => seed++);
   
   // Generate noise values for horizontal edge
   for (let x = 0; x <= width; x++) {
     horizontalNoiseValues.push(noise(x * 0.05));
   }
+
+  $(window).resize(function() {
+    resizeScreen();
+  });
+  resizeScreen();
 }
 
+$("#reimagine").click(function() {
+  seed++;
+})
 
 function draw() {
   randomSeed(seed);

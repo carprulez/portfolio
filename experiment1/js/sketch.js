@@ -2,11 +2,7 @@
 // Author: Carter Gruebel
 // Date: 4/4/24
 
-// Here is how you might set up an OOP p5.js project
-// Note that p5.js looks for a file called sketch.js
-
 // Constants - User-servicable parts
-// In a longer project I like to put these in a separate file
 const VALUE1 = 1;
 const VALUE2 = 2;
 
@@ -31,7 +27,7 @@ function resizeScreen() {
   centerVert = canvasContainer.height() / 2; // Adjusted for drawing logic
   console.log("Resizing...");
   resizeCanvas(canvasContainer.width(), canvasContainer.height());
-  // redrawCanvas(); // Redraw everything based on new size
+  redrawCanvas(); // Redraw everything based on new size
 }
 
 // setup() function is called once when the program starts

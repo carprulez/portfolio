@@ -32,9 +32,6 @@ function main() {
   
   const template = `You approach the $adjective view of the $first $second trail, be $warning!`;
   
-  
-  // STUDENTS: You don't need to edit code below this line.
-  
   const slotPattern = /\$(\w+)/;
   
   function replacer(match, name) {
@@ -63,5 +60,5 @@ function main() {
   
 }
 
-// let's get this party started - uncomment me
+// let's get this party started
 main();

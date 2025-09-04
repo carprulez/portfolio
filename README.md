@@ -1,2 +1,2 @@
 # Personal Portfolio
-This is a collection of some small projects and experiments that I have worked on. The experiments are browser-based and were done in JavaScript using the website glitch.com, feel free to take a look around!
+This is a collection of some small projects and experiments that I have worked on. The experiments are browser-based and were done with Javascript and p5.js using the browser-based code editor glitch.com. The projects were programmed in various programming languages and using various engines. All collaborators and details can be found on the respective pages. Feel free to take a look around!

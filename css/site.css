@@ -36,16 +36,6 @@ canvas {
   height: 100%;
 }
 
-.fullscreen-box {
-  display: flex;
-  justify-content: flex-end; /* Aligns the button to the right */
-  margin-top: 0.25em;
-}
-
-.fullscreen-box button {
-  font-size: 0.6em;
-}
-
 body.is-fullscreen #canvas-container {
   position: fixed; /* Use 'fixed' instead of 'absolute' to ensure it covers the entire screen */
   top: 0;

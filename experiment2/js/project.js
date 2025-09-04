@@ -1,11 +1,6 @@
-// project.js - purpose and description here
-// Author: Your Name
-// Date:
-
-// NOTE: This is how we might start a basic JavaaScript OOP project
-
-// Constants - User-servicable parts
-// In a longer project I like to put these in a separate file
+// sketch.js - This is the sketch for a procedurally generated coral reef.
+// Author: Carter Gruebel
+// Date: 4/15/2024
 
 // define a class
 class MyProjectClass {

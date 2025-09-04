@@ -35,16 +35,7 @@ function setup() {
   for (let x = 0; x <= width; x++) {
     horizontalNoiseValues.push(noise(x * 0.05));
   }
-
-  $(window).resize(function() {
-    resizeScreen();
-  });
-  resizeScreen();
 }
-
-$("#reimagine").click(function() {
-  seed++;
-})
 
 function draw() {
   randomSeed(seed);

@@ -2,11 +2,6 @@
 // Author: Carter Gruebel
 // Date: 4/4/24
 
-// NOTE: This is how we might start a basic JavaScript OOP project
-
-// Constants - User-servicable parts
-// In a longer project I like to put these in a separate file
-
 // define a class
 class MyProjectClass {
   // constructor function

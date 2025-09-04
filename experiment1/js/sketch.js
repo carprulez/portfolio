@@ -22,14 +22,6 @@ class MyClass {
     }
 }
 
-function resizeScreen() {
-  centerHorz = canvasContainer.width() / 2; // Adjusted for drawing logic
-  centerVert = canvasContainer.height() / 2; // Adjusted for drawing logic
-  console.log("Resizing...");
-  resizeCanvas(canvasContainer.width(), canvasContainer.height());
-  redrawCanvas(); // Redraw everything based on new size
-}
-
 // setup() function is called once when the program starts
 function setup() {
   // place our canvas, making it fit our container
@@ -40,11 +32,6 @@ function setup() {
 
   // create an instance of the class
   myInstance = new MyClass("VALUE1", "VALUE2");
-
-  $(window).resize(function() {
-    resizeScreen();
-  });
-  resizeScreen();
 }
 
 // draw() function is called repeatedly, it's the main animation loop
@@ -67,9 +54,4 @@ function draw() {
   textStyle(BOLD);
   textSize(140);
   text("p5*", centerHorz - 105, centerVert + 40);
-}
-
-// mousePressed() function is called once after every time a mouse button is pressed
-function mousePressed() {
-    // code to run when mouse is pressed
 }

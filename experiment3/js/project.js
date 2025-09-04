@@ -2,10 +2,7 @@
 // Author: Carter Gruebel
 // Date: 4/23/24
 
-// NOTE: This is how we might start a basic JavaaScript OOP project
-
 // Constants - User-servicable parts
-// In a longer project I like to put these in a separate file
 
 let seed = 0;
 let tilesetImage;

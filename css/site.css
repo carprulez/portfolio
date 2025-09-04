@@ -1,8 +1,12 @@
 h1, h2 {
   margin: 0;
   padding: 0;
-  /* font-size: 1.2em; */
+  font-size: 1.2em;
   font-weight: lighter;
+}
+
+body {
+  background-color: #6CB8AF;
 }
 
 #content {
@@ -16,7 +20,7 @@ h1, h2 {
 .minor-section {
   margin: 10px;
   padding: 10px;
-  border: solid 1px #A0A0A0;
+  border: solid 1px #36403D;
   border-radius: 10px;
 }
 

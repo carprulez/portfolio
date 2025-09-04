@@ -97,7 +97,12 @@ function rebuildWorld(key) {
   tile_rows = Math.ceil(height / (tile_height_step_main * 2));
 }
 
-function mouseClicked() {
+function mouseClicked(event) {
+  // Only handle clicks that happen on the canvas
+  if (event.target.tagName !== 'CANVAS') {
+    return;
+  }
+
   let world_pos = screenToWorld(
     [0 - mouseX, mouseY],
     [camera_offset.x, camera_offset.y]
@@ -106,7 +111,6 @@ function mouseClicked() {
   if (window.p3_tileClicked) {
     window.p3_tileClicked(world_pos[0], world_pos[1]);
   }
-  return false;
 }
 
 function draw() {
